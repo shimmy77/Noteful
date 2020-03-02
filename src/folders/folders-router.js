@@ -6,6 +6,12 @@ const FoldersService = require('./folders-services')
 const foldersRouter = express.Router()
 const jsonParser = express.json()
 
+const serializeFolder = folder => ({
+    id: folder.id,
+    name: xss(folder.name)
+    
+})
+
 foldersRouter
     .route('/')
     .get ((req, res, next) => {
@@ -34,7 +40,7 @@ foldersRouter
             res
                 .status(201)
                 .location(path.posix.join(req.originalUrl, `/${folder.id}`))
-                .json(folder)
+                .json(serializeFolder(folder))
         })
         .catch(next)
     })
