@@ -12,7 +12,7 @@ foldersRouter
         const knexInstance = req.app.get('db')
         FoldersService.getAllFolders(knexInstance)
         .then(folders => {
-            res.json(foldesr)
+            res.json(folders)
         })
         .catch(next)
     })
