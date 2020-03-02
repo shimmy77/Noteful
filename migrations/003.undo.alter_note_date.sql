@@ -1,0 +1,1 @@
+ALTER TABLE noteful_notes DROP column IF EXISTS date_modified;
