@@ -145,7 +145,7 @@ describe('Noteful Endpoints', function() {
         })
     })
     describe(`Note Endpoints`, () => {
-        /** Continue Here */
+        describe(`GET /api/notes`)
     })
 
 
